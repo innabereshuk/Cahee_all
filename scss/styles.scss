@@ -15,42 +15,203 @@ html {
 
 body {
     min-height: 100%;
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
+    font-family: 'Pacifico', 'Raleway', sans-serif;
+    font-size: 1.4rem;
     font-weight: 300;
     line-height: 1.3;
     color: #262626;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 a, button {
-    transition: all .4s ease-in;
+    transition: all .25s ease-in;
     cursor: pointer;
     text-decoration: none;
 }
 
 .container {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     text-align: center;
+    &__flex {
+        display: flex;
+    }
 }
 
  .section {
-     width: 100%;
-     min-height: 100vh;
-  
+      width: 100%;
+      min-height: max-content;
  }
 
-.services {
-    background: #70bfff;
-    height: max-content;
+//  Header 
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
 }
 
-.services .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-image: url(/cahee.img/servic.png);
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+    &__logo {
+         @include font(5rem, $text-color, 400, $text-logo, 1.3);
+     }
+    &__menu {
+       margin: auto 0;
+        &__item {
+            display: inline-block;
+            list-style: none;
+        }
+        &__link {
+            @include font(1.6rem, $text-color, 700, $text-ff, $lh: 1.5);
+            margin-left: 40px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 2px solid transparent;
+            &:hover,
+            &:focus,
+            &:active {
+            border-top: 2px solid #ff6033;
+            color: #ff6033;
+            @include hover;                      
+            }
+        }
+    }
+}
+
+.section__start-screen {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #efe8e7;
+    height: 100vh;
+}
+
+.start-screen__content {
+    width: 35%;
+    margin: 25rem 1.5rem 0;
+    text-align: start;
+}
+
+.start-screen {
+    &__title {
+        @include font(6rem, $text-color, 700, $text-ff, 1.3);
+        margin: 0;
+    }
+    &__subtitle {
+        @include p-dark;
+        margin: 0;
+        margin: 3.5rem 0;
+    }
+    &__btn {
+        @include btn-big;
+        background-color: #ff6033;
+        padding: 2rem;
+        &:hover,
+        &:focus,
+        &:active {
+         color: #ff6033;
+         background-color: #fff;
+         border: $b-size solid #ff6033;
+        }
+    }
+}
+
+.scroll {
+    position: absolute;
+    left: calc(100% / 2 - 40px);
+    top: 854px;
+    width: 24px;
+    height: 40px;
+    z-index: 13;
+    opacity: .4;
+    &:hover,
+    &:focus,
+    &:active {
+        position: absolute;
+        left: calc(100% / 2 - 40px);
+        bottom: 7rem;
+        width: 24px;
+        height: 40px;
+        z-index: 13;
+        opacity: .8;
+    }
+  }
+
+  .scroll:hover svg {
+    transform: scale(1.2);
+  }
+
+// About
+
+.section__about .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem;
+}
+
+.section__about {
+    background-color: #00b4b4;
+}
+
+.about { 
+    &__img {
+        width: calc(100% / 2 - 1.5rem);
+        position: relative;
+        border-radius: 50%;
+        height: 100%;
+    }
+    &__pic {
+        @include pCenter;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &__content {
+        width: calc(100% / 2 - 1.5rem);
+        margin-left: 90px;
+        text-align: start;
+        &__title {
+        @include title-light;
+        margin: 0;
+        margin-bottom: 3rem;
+        }
+        &__subtitle {
+        @include p-light;
+        margin: 0;
+        margin-bottom: 2rem;
+        }
+    }
+}
+
+
+
+// Services
+.section {
+    &__services {
+    background: #70bfff;
+    height: max-content;
+    &__title {
+        @include title-light;
+        max-height: 36rem;
+        overflow: hidden;
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+}
+}
+
+.section__services .container {
     background-position: right;
     background-size: auto;
     background-repeat: no-repeat;
@@ -61,9 +222,10 @@ a, button {
 
 .list {
     padding: 18rem 11rem 15rem;
+    width: 50%;
         &__item {
         width: 40.3rem;
-        background: $bg-list;
+        background: $title-color;
         margin-bottom: 2rem;
         list-style: none;
         box-shadow: 0 0 8px 1px rgba(0, 0, 0, .5);
@@ -81,9 +243,9 @@ a, button {
             display: block;
             position: absolute;
             top: 0;
-            left: 30.3rem;
+            left: 75%;
             width: .2rem;
-            height: 10.1rem;
+            height: 9.8rem;
             background: rgba(0, 0, 0, .2);
         }
         &:hover,
@@ -91,7 +253,7 @@ a, button {
         &:active {
             background: rgba(0, 0, 0, .5);
             color: $title-color;
-            border: $b-size solid $bg-list;
+            border: $b-size solid $title-color;
             @include hover;
             opacity: .6;
         }
@@ -105,7 +267,6 @@ a, button {
         &:focus path,
         &:active path {
             fill: white;
-            
         }
         span {
             display: block;
@@ -116,54 +277,57 @@ a, button {
 }
 
 .list__link:hover::after {
-        background: $bg-list;
+        background: $title-color;
         content: "";
         display: block;
         position: absolute;
         top: 0;
-        left: 30.3rem;
+        left: 75%;
         width: .2rem;
-        height: 10.1rem;
+        height: 9.8rem;
     }
 
 
-.title {
-    @include font(9rem, $title-color, 700, $text-ff, 1.3);
-    max-height: 36rem;
-    overflow: hidden;
-    margin-left: 2rem;
-    margin-right: 1rem;
-   }
+// Gallery
 
-   .gallery {
-       width: 100%;
-       height: max-content;
-       background: #ffe92f;
-       &__title {
-        @include font(9rem, $text-color, 700, $text-ff, 1.3);
-        max-height: 22rem;
-        margin: 0;
-        padding: 10rem 5rem 3rem;
-        overflow: hidden;
-        }
+.gallery {
+    width: 100%;
+    height: max-content;
+    background: #ffe92f;
+    &__title {
+           @include title-dark;
+           margin: 0;
+           padding: 10rem 5rem 3rem;
+    }
     &__subtitle {
-        @include font(1.7rem, $text-color, 300, $text-ff, 1.5);
-        max-width: 600px;
-        max-height: 12.8rem;
+        @include p-dark;
         margin: 0 auto;
-        word-wrap: break-word;
-        overflow: hidden;
-      }
-     
- }
+    }
+    &__btn {
+        display: inline-block;
+         @include btn-big;
+         background: #5585a2;
+         padding: 2rem 4rem;
+         margin: 0 auto 11.5rem;
+         &:hover,
+         &:focus,
+         &:active {
+             background: $title-color;
+             color: #5585a2;
+             font-weight: 600;
+             border: $b-size solid #5585a2;
+             @include hover;
+         }
+     }
+}
 
  .images {
    display: grid;
    grid-template-columns: repeat(6, 1fr);
    grid-template-rows: repeat(7, 1fr);
-   gap: 30px;
+   gap: 3rem;
    margin: 4.5rem 1.5rem;
-   height: 98rem;
+   height: 97rem;
    &__item {
          grid-row: span 2;
        &--2w {
@@ -191,7 +355,6 @@ a, button {
     display: flex;
     position: relative;
     height: 100%;
-    // width: 100%;
     overflow: hidden;
     &__pic {
         @include pCenter;
@@ -199,37 +362,39 @@ a, button {
         min-height: 100%;
     }
 }
-
-.btn {
-    display: inline-block;
-    @include font(2rem, $title-color, 300, $text-ff, 1.3);
-     background: $btn-color;
-     text-transform: uppercase;
-     text-align: center;
-     padding: 2rem 4rem;
-     box-shadow: 0 0 5px 1px $btn-color;
-     outline: none;
-     margin: 0 auto 11.5rem;
-     border:  $b-size solid transparent;
-     &:hover,
-     &:focus,
-     &:active {
-         background: $title-color;
-         color: $btn-color;
-         font-weight: 600;
-         border: $b-size solid $btn-color;
-         @include hover;
-     }
- }
-
- .subscribe {
+// Subscribe
+ 
+.section {
+   &__subscribe {
      background-size: cover;
      background-position: right;
      background-repeat: no-repeat;
-    
- }
+}
+}
 
- .content {
+ .subscribe {
+     &__form {
+         display: flex;
+         justify-content: space-between;
+     }
+     &__button {
+        @include btn-big;
+         background: #96b92c;
+         padding: 1.6rem 2rem;
+         width: 17.5rem;
+        margin-left: 3rem;
+         &:hover,
+         &:focus,
+         &:active {
+              background: $title-color;
+              color: #96b92c;
+              font-weight: 300;
+              border: $b-size solid #96b92c;
+              @include hover;
+          }
+     }
+  
+    &__content {
     text-align: left;
     padding: 14rem 1.5rem 16rem;
     width: 65%;
@@ -238,27 +403,23 @@ a, button {
         margin: 0;
     }
     &__subtitle {
-        @include font(1.7rem, $text-color, 300, $text-ff, 1.3);
+        @include p-dark;
         margin-top: 3.5rem;
         margin-bottom: 3.5rem;
         width: 80%;
     }
+}
  }
 
- .form {
-     display: flex;
-     justify-content: space-between;
- }
-
- input {
+input {
      padding: 2rem;
-     width: 57rem;
+     width: 55rem;
      border: 1px solid #606060;
      outline: transparent;
      &:hover,
      &:focus,
      &:active {
-         border: $b-size solid #96b92c;
+         border: 1px solid #96b92c;
      }
     }
 
@@ -266,23 +427,326 @@ a, button {
     @include font(1.5rem, $text-color, 300, $text-ff, 1.3);
 }
 
-.button {
-    @include font(2rem,$title-color, 300, $text-ff, 1.3);
-    text-transform: uppercase;
-    background: #96b92c;
-    padding: 1.6rem 2rem;
-    border: 2px solid transparent;
-    box-shadow: 0 0 5px 1px #96b92c;
-    &:hover,
-    &:focus,
-    &:active {
-         background: $title-color;
-         color: #96b92c;
-         font-weight: 600;
-         border: $b-size solid #96b92c;
-         @include hover;
+
+// Blog
+
+
+.section__blog .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section {
+    width: 100%;
+     &__blog { 
+        background-color: #b07cf7;
+         &__title {
+           @include title-light;
+           margin: 0;
+           margin: 10rem 5rem 3rem;
+        }
+        &__subtitle {
+          @include p-light ;
+           margin: 0 auto;
+         }
+         &__btn {
+            @include btn-big;
+             background: #f72b3b;
+             margin-bottom: 12rem;
+             &:hover,
+             &:focus,
+             &:active {
+                 background: $title-color;
+                 color: #f72b3b;
+                 border: $b-size solid #f72b3b;
+                 @include hover;
+             }
+         }
      }
 }
+
+.flex {
+    display: flex;
+    margin: 5rem 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: row wrap;
+    &__item {
+        flex-basis: calc(100% / 3 - 3rem);
+        margin: 1.5rem;
+    }
+ }
+
+ .post {
+     background-color: $title-color;
+     transition: all .2s linear;
+     height: 30rem;
+     width: 100%;
+     box-shadow: 0 0 8px 2px rgba(41, 40, 40, 0.5);    
+    &__link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: 2px 2px 20px 5px rgba(65, 60, 60, 0.5);
+         }
+        &:hover::before,
+        &:focus::before,
+        &:active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 15%, rgba(0,0,0,.1) 85%);
+         }      
+    }
+
+    &__pic {
+        @include pCenter;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &__data {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: rgba(0, 0, 0, .5);
+        z-index: 2;
+        text-transform: uppercase;
+        @include font(2.5rem, $title-color, 700, $text-ff, 1.2);
+        margin: 3rem;
+        border-radius: 7px;
+    }
+    &__text {
+        z-index: 2;
+        text-align: left;
+        margin: 20px 15px;
+        &--title {
+            @include font(2rem, $title-color, 700, $text-ff, 1.2);
+            display: inline-block;
+        }
+        &--subtitle {
+            @include font(1.3rem, $title-color, 700, $text-ff, 1.2);
+            display: inline-block;
+            margin-top: 25px;
+        }
+    }
+}
+
+.post__link:hover .post__pic {
+ transform: scale(1.05) translate(-50%,-50%);
+    @include tr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.post__link:hover .post__text, .post__data {
+    z-index: 4;
+}
+
+
+// Contact
+
+// section {
+//     width: 100%;
+//     min-height: 100vh;
+//     background: lightpink;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     color: #262626;
+//     line-height: 1.5;
+//     display: inline-flex;
+   
+// }
+
+// .container {
+//     width: 1500px;
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0 auto;
+// }
+
+// h1 {
+//     font-size: 9rem;
+//     font-family: 'Raleway', sans-serif;
+//     margin: 0 0;
+//     padding-top: 10rem;
+//     padding-bottom: 3rem;
+   
+// }
+
+// h2 {
+//     margin: 0;
+//     text-transform: uppercase;
+//     font-family: 'Raleway', sans-serif;
+//     font-weight: 700;
+// }
+
+// p {
+//     font-size: 1.7rem;
+//     font-family: 'Raleway', sans-serif;
+//     font-weight: 300;
+//     margin: 0;
+// }
+
+// .flex {
+//    display: flex;
+//    justify-content: flex-start;
+//    margin-top: 5rem;
+// }
+
+// .adress {
+//    margin: 0 0 0 10rem;
+    
+// }
+
+// .adress__big {
+//     font-size: 2rem;
+//     margin: 0;
+//     padding: .2rem 0 1.2rem 0;
+// }
+
+
+// #myform {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0 7rem 0 9rem;
+//     width: 50rem;
+//     height: 44.5rem;
+// }
+
+// input {
+//     height: 5rem;
+//     margin-bottom: 1.6rem;
+// }
+
+// input[name="username"] {
+//     text-transform: capitalize;
+// }
+
+// input[type="submit"] {
+//     width: 50%;
+//     margin: 4.6rem auto;
+//     font-size: 2.2rem;
+//     color: #fff;
+//     padding: 1rem;
+//     border-radius: 10px;
+//     opacity: 1;
+// }
+
+// .phone {
+//     display: inline-block;
+// }
+
+// #country {
+//     width: 15rem;
+//     height: 5rem;
+//     background: #00c4c4;
+//     opacity: .5;
+//     border: 0;
+//     padding-left: 10px;
+//     color: #fff;
+//     font-size: 1.7rem;
+// }
+
+// #phone {
+//     width: calc(50rem - 15rem - .5rem);
+// }
+
+
+// textarea {
+//     resize: none;
+// }
+
+// textarea, input {
+//     background: #00c4c4;
+//     opacity: .5;
+//     border: 0;
+//     padding: 2rem;
+//     font-size: 1.7rem;
+// }
+
+
+// input[placeholder]::placeholder {
+//     color: white;
+//     opacity: .8;
+// }
+
+
+// textarea::placeholder {
+//     color: white;
+//     opacity: .8;
+// }
+
+
+// #country:active,
+// #country:focus,
+// input:active,
+// input:focus,
+// textarea:active,
+// textarea:focus {
+//     background: #00c4c4;
+//     opacity: 1;
+//     border-left: .5rem solid #355b82;
+//     color: white;
+// }
+
+// #phone:active,
+// #phone:focus {
+//     border-left: none;
+// }
+
+// input[type="submit"]:hover,
+// input[type="submit"]:focus {
+//     background: transparent;
+//     border: 3px solid #355b82;
+//     transform: scale(1.1, 1.1);
+//     color: #355b82;
+// }
+
+// footer {
+//     background: #262626;
+//     color: white;
+//     height: 100px;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+// }
+
+
+// .smoll {
+//       font-size: 1.5rem;
+//       font-family: 'Raleway', sans-serif;
+// }
+
+// .light {
+//     font-size: 1.6rem;
+//     font-family: 'Raleway', sans-serif;
+// }
+
+// .pacifico {
+//     font-size: 2.5rem;
+// }
+
+// .green {
+//     color: #f12b55;
+//     font-weight: 700;
+// }
+
     
    
 

@@ -7,16 +7,98 @@
     <title>Cahee</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#nav__menu").on("click","a", function (event) {
+               event.preventDefault();
+               var id  = $(this).attr('href'),
+                   top = $(id).offset().top;
+               $('body,html').animate({scrollTop: top}, 1500);
+           });
+       });
+
+       $(document).ready(function(){
+           $("#home").on("click","a", function (event) {
+               event.preventDefault();
+               var id  = $(this).attr('href'),
+                   top = $(id).offset().top;
+               $('body,html').animate({scrollTop: top}, 1500);
+           });
+       });
+       </script>
 </head>
 <body>
-   <section class="services">
-            <div class="container">
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="nav__logo">
+                    <span>Cachee</span>
+                </div>
+                <ul class="nav__menu" id="nav__menu">
+                    <li class="nav__menu__item">
+                        <a href="#" class="nav__menu__link">Home</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="#about" class="nav__menu__link">About</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="#" class="nav__menu__link">Services</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="#" class="nav__menu__link">Gallery</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="#" class="nav__menu__link">Blog</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="#" class="nav__menu__link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="section section__start-screen" id="home" style="background-image: url(cahee.img/first.jpg);">
+            <div class="container container__flex">
+                <div class="start-screen__content">
+                    <h1 class="start-screen__title">Fresh Life</h1>
+                    <p class="start-screen__subtitle">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                    <button type="button" class="start-screen__btn">GET FREE NOW</button>
+                </div>
+               <a href="#about" class="scroll">
+                    <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                     width="24px" height="40px">
+                    <image  x="0px" y="0px" width="24px" height="40px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAoCAQAAABOBPLeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfjDAwDBTCKyuuFAAACAklEQVQ4y+3VMUiUYRzH8Y+vnjampiCcECKheCQIbZJSVF5jNEiBSk02OOnQJLU0ZEMOFUFimRDU4tJpUQgtQYSEhg7ioiWpdRItnmIN6nWXd56NQb/hD+/z//7e5/8+zwu/vCNSFKhx2gkRpfhqymsvzNj8jeSlGOp1andAutYMuuvDbsNlvSqx4rlpqzioVlQZ5l3zYAsr2Mavuq7AqpuemLe+vRpSqVWPSveUuwH5pXDJLSHvnfNMPGXiTXFvjDom7LjPJrZGiogJm3DeXPLNUcSSO1V5qsGCqKlAoS5hce1JnA4jRnQkn+e0iwvrUhio1oY+kykn05hStzSlD22qA2cUWTacdpQbKXVHw5YVaQk0I2Yxrfkzpe5oUQzNgQimJeRSwjQigTLEc+K2qUOB0K5ps2kDoSBja2s1L3vrT61B8trSVJDRMKDJpoH9G96p/7sdssDZv2EP/Tf8s4Z12X+QdBVgPbCC4n0ZirESmEStwpx4oRpMBcbRoiKnocJZjAfGrCl3MafhgjJrRgOzHqFbZE+8TjeGzAYS+i0o9lBVVrzKkBILbkvkl7Lku6iwRm99yYAf9ViDdT3GdvJhwoYmYa3yffIjmRAhh3W6r8qGXv1kiqwlMTO+oUSNqHJpkZUeild07LqRhEF3MoUiBGqdclKdMiz76JWXplNj9xcI0YsrPw+qKwAAAABJRU5ErkJggg==" />
+                    </svg>
+               </a>
+            </div>
+        </div>
+   
+         <section class="section section__about" id="about">
+            <div class="container container__flex">
+                <div class="about__img">
+                    <img class="about__pic" src="cahee.img/about.png">
+                </div>
+                <div class="about__content">
+                    <h2 class="about__content__title">About Us</h2>
+                    <p class="about__content__subtitle">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                    <p class="about__content__subtitle">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                </div>
+            </div>
+         </section>
+    
+
+         <section class="section section__services">
+            <div class="container" style="background-image: url(cahee.img/service.png);" >
                <ul class="list">
                    <li class="list__item">
                         <a href="#" class="list__link">
                             <span>Online Shopping</span>
                             <svg 
-                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns="http://www.w3.org/2000/svg"   
                             xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="55px" height="55px">
                            <path fill-rule="evenodd"  fill="rgb(38, 38, 38)"
@@ -254,11 +336,11 @@
                         </a>
                     </li>
                </ul>
-               <h1 class="title">Our Services</h1>
+               <h1 class="section__services__title">Our Services</h1>
             </div>
-        </section>
+         </section>
 
-    <section class="gallery">
+         <section class="gallery">
        <div class="container">
             <h1 class="gallery__title">Gallery</h1>
             <p class="gallery__subtitle">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -290,24 +372,112 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">VIEW MORE</a>
+            <a href="#" class="gallery__btn">VIEW MORE</a>
        </div >
-    </section> 
+         </section> 
     
-    <section class="subscribe" style="background-image: url(cahee.img/bg.png);">
+         <section class="section section__subscribe" style="background-image: url(cahee.img/bg.png);">
         <div class="container">
-            <div class="content">
-                <h2 class="content__title">Subscribe To Us</h2>
-                <p class="content__subtitle">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <form action="" class="form">
+            <div class="subscribe__content">
+                <h2 class="subscribe__content__title">Subscribe To Us</h2>
+                <p class="subscribe__content__subtitle">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <form action="" class="subscribe__form">
                     <label><input type="text" placeholder="Your email address..."></label>
-                    <button class="button" type="submit">SUBSCRIBE</button>
+                    <button class="subscribe__button" type="submit">SUBSCRIBE</button>
                 </form>
             </div>
         </div>
-    </section>
-       
-       
+         </section>
+
+         <section class="section section__blog">
+        <div class="container">
+            <h1 class="section__blog__title">Blog</h1>
+            <p class="section__blog__subtitle">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+            <div class="flex">
+               <div class="flex__item">
+                   <article class="post">
+                        <a href="#" class="post__link">
+                            <img class="post__pic" src="cahee.img/blog1.png" alt="">
+                            <time class="post__data">20 nov</time>
+                            <div class="post__text">
+                                <span class="post__text--title">Green Smoothies: Too Much of a Good Thing?</span>
+                                <span class="post__text--subtitle">By Auskteez - 2 hours ago</span>
+                            </div>
+                        </a>
+                   </article>
+               </div>
+               <div class="flex__item">
+                    <article class="post">
+                        <a href="#" class="post__link">
+                            <img class="post__pic" src="cahee.img/blog2.png" alt="">
+                            <time class="post__data">14 nov</time>
+                            <div class="post__text">
+                                <span class="post__text--title">Growing Food and a “Thirst” for Innovation</span>
+                                <span class="post__text--subtitle">By Auskteez - 3 hours ago</span>
+                            </div>
+                        </a>
+                    </article>
+               </div>
+               <div class="flex__item">
+                    <article class="post">
+                        <a href="#" class="post__link">
+                           <img class="post__pic" src="cahee.img/blog3.png" alt="">
+                            <time class="post__data">10 nov</time>
+                           <div class="post__text">
+                                <span class="post__text--title">Pesticides & Food: What You Need to Know</span>
+                                <span class="post__text--subtitle">By Auskteez - 6 hours ago</span>
+                           </div>
+                        </a>
+                    </article>
+               </div>
+            </div>
+            
+            <a href="#" class="section__blog__btn">VIEW MORE</a>
+        </div>
+         </section>
+
+         <section class="section" style="background-image: url(cahee.img/footer.jpg);">
+        <div class="container">
+            <h1 class="text-center">Contact</h1>
+            <p class="text-center">For new projects, ideas, business or anything<br>
+                    you'd like to discuss, contact with me!</p>
+            <div class="flex">
+                <form id="myform" action="" method="GET">
+                    <input type="text" name="username" placeholder="Auskteez Tran" autofocus required>
+                    <input type="email" name="email" placeholder="Your email..." required>
+                    <div class="phone__ph">
+                        <select id="country">
+                             <option value="ru">Россия +7</option>
+                             <option value="ua">Украина +38</option>
+                             <option value="by">Белоруссия +37</option>
+                         </select>
+                         <input data-mask="(999) 999 99 99" type="tel" name="phone" id="phone" placeholder="Your phone number..." required>
+                     </div>
+                    <textarea name="comments" rows="15" cols="10" placeholder="Your message..."></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="adress">
+                    <h2>ADDRESS</h2>
+                    <p class="adress__big">123 City name, Street, City, Country</p>
+                    <h2>EMAIL</h2>
+                    <p class="adress__big">cahee@domain.com</p>
+                    <h2>PHONE</h2>
+                    <p class="adress__big">+012 345 6789</p>
+                 </div>
+            </div>
+        </div>
+         </section>
+    </main>
+    <footer>
+        <span class="smoll">© 2015 Company. All right reserved.</span>
+        <span class="pacifico">Cahee</span>
+        <span class="light">Made with <span class="green"> love </span>by Auskteez</span>
+    </footer>
+
+    
+    
+        <script src="jquery.mask.min.js"></script>
+        <script src="jquery.custom.js"></script>
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         <script src="https://kit.fontawesome.com/d357e3b57e.js" crossorigin="anonymous"></script>
    
