@@ -43,16 +43,16 @@
                         <a href="#about" class="nav__menu__link">About</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="#" class="nav__menu__link">Services</a>
+                        <a href="#services" class="nav__menu__link">Services</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="#" class="nav__menu__link">Gallery</a>
+                        <a href="#gallery" class="nav__menu__link">Gallery</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="#" class="nav__menu__link">Blog</a>
+                        <a href="#blog" class="nav__menu__link">Blog</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="#" class="nav__menu__link">Contact</a>
+                        <a href="#contact" class="nav__menu__link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -78,20 +78,22 @@
         </div>
    
          <section class="section section__about" id="about">
-            <div class="container container__flex">
-                <div class="about__img">
-                    <img class="about__pic" src="cahee.img/about.png">
-                </div>
-                <div class="about__content">
-                    <h2 class="about__content__title">About Us</h2>
-                    <p class="about__content__subtitle">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                    <p class="about__content__subtitle">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+            <div class="container">
+                <div class="wrap">
+                    <div class="wrap__img">
+                        <img class="wrap__pic" src="cahee.img/about.png">
+                    </div>
+                    <div class="wrap__content">
+                        <h2 class="wrap__content__title">About Us</h2>
+                        <p class="wrap__content__subtitle">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                        <p class="wrap__content__subtitle">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                    </div>
                 </div>
             </div>
          </section>
     
 
-         <section class="section section__services">
+         <section class="section section__services" id="services">
             <div class="container" style="background-image: url(cahee.img/service.png);" >
                <ul class="list">
                    <li class="list__item">
@@ -340,7 +342,7 @@
             </div>
          </section>
 
-         <section class="gallery">
+         <section class="section gallery" id="gallery">
        <div class="container">
             <h1 class="gallery__title">Gallery</h1>
             <p class="gallery__subtitle">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -382,14 +384,14 @@
                 <h2 class="subscribe__content__title">Subscribe To Us</h2>
                 <p class="subscribe__content__subtitle">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 <form action="" class="subscribe__form">
-                    <label><input type="text" placeholder="Your email address..."></label>
+                    <input type="text" placeholder="Your email address...">
                     <button class="subscribe__button" type="submit">SUBSCRIBE</button>
                 </form>
             </div>
         </div>
          </section>
 
-         <section class="section section__blog">
+         <section class="section section__blog" id="blog">
         <div class="container">
             <h1 class="section__blog__title">Blog</h1>
             <p class="section__blog__subtitle">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
@@ -436,42 +438,39 @@
         </div>
          </section>
 
-         <section class="section" style="background-image: url(cahee.img/footer.jpg);">
-        <div class="container">
-            <h1 class="text-center">Contact</h1>
-            <p class="text-center">For new projects, ideas, business or anything<br>
+         <section class="section section__contact" id="contact" style="background-image: url(cahee.img/footer.jpg);">
+             <div class="container container__flex">
+                 <h1 class="contact__title">Contact</h1>
+                 <p class="contact__subtitle">For new projects, ideas, business or anything<br>
                     you'd like to discuss, contact with me!</p>
-            <div class="flex">
-                <form id="myform" action="" method="GET">
-                    <input type="text" name="username" placeholder="Auskteez Tran" autofocus required>
-                    <input type="email" name="email" placeholder="Your email..." required>
-                    <div class="phone__ph">
-                        <select id="country">
-                             <option value="ru">Россия +7</option>
-                             <option value="ua">Украина +38</option>
-                             <option value="by">Белоруссия +37</option>
-                         </select>
-                         <input data-mask="(999) 999 99 99" type="tel" name="phone" id="phone" placeholder="Your phone number..." required>
-                     </div>
-                    <textarea name="comments" rows="15" cols="10" placeholder="Your message..."></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-                <div class="adress">
-                    <h2>ADDRESS</h2>
-                    <p class="adress__big">123 City name, Street, City, Country</p>
-                    <h2>EMAIL</h2>
-                    <p class="adress__big">cahee@domain.com</p>
-                    <h2>PHONE</h2>
-                    <p class="adress__big">+012 345 6789</p>
-                 </div>
+               <div class="contact__wrap">
+                    <div class="contact__wrap__form">
+                         <form class="myform" action="" method="GET">
+                            <input class="myform__input" type="text" name="name" placeholder="Auskteez Tran" autofocus required>
+                            <input class="myform__input" type="email" name="email" placeholder="Your email..." required>
+                            <input class="myform__input" data-mask="(999) 999 99 99" type="tel" name="phone" id="phone" placeholder="Your phone number..." required>
+                            <textarea name="comments" rows="8" cols="10" placeholder="Your message..."></textarea>
+                            <button type="submit" value="Submit" class="myform__btn">Submit</button>
+                         </form>
+                    </div>
+                    <div class="contact__wrap__adress">
+                        <p class="contact__wrap__adress--sm">ADDRESS</p>
+                        <p class="contact__wrap__adress--lg">123 City name, Street, City, Country</p>
+                        <p class="contact__wrap__adress--sm">EMAIL</p>
+                        <p class="contact__wrap__adress--lg">cahee@domain.com</p>
+                        <p class="contact__wrap__adress--sm">PHONE</p>
+                        <p class="contact__wrap__adress--lg">+012 345 6789</p>
+                    </div>
+               </div>
             </div>
-        </div>
          </section>
     </main>
-    <footer>
-        <span class="smoll">© 2015 Company. All right reserved.</span>
-        <span class="pacifico">Cahee</span>
-        <span class="light">Made with <span class="green"> love </span>by Auskteez</span>
+    <footer class="footer">
+       <div class="container">
+            <span class="text text--smoll">© 2015 Company. All right reserved.</span>
+            <span class="text text--pacifico">Cahee</span>
+            <span class="text text--light">Made with<a class="text--red">love</a>by Auskteez</span>
+       </div>
     </footer>
 
     
