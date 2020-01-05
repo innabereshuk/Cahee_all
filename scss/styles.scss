@@ -612,6 +612,7 @@ header {
         outline: transparent;
         margin-bottom: 1.5rem;
         width: 100%;
+        color: white;
         outline: none;
         background: rgba(0, 196, 196, .6);
         border: $b-size solid transparent;
@@ -658,6 +659,7 @@ header {
         background: rgba(0, 196, 196, .6);
         border: $b-size solid transparent;
         margin-bottom: 1.5rem;
+        color: white;
         outline: none;
         &:hover,
         &:active,
@@ -698,6 +700,13 @@ header {
         @include font(1.5rem, $red-color, 700, $text-ff, 1.5);
     }
 
+}
+
+.ok{
+    border: 1px solid green;
+    }
+.error{
+    border: 1px solid red;
 }
 
 

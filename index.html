@@ -383,8 +383,8 @@
             <div class="subscribe__content">
                 <h2 class="subscribe__content__title">Subscribe To Us</h2>
                 <p class="subscribe__content__subtitle">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <form action="" class="subscribe__form">
-                    <input type="text" placeholder="Your email address...">
+                <form action="" class="subscribe__form"> 
+                    <input type="email" name="email" minlength="2" maxlength="30" placeholder="Your email address...">
                     <button class="subscribe__button" type="submit">SUBSCRIBE</button>
                 </form>
             </div>
@@ -445,10 +445,10 @@
                     you'd like to discuss, contact with me!</p>
                <div class="contact__wrap">
                     <div class="contact__wrap__form">
-                         <form class="myform" action="" method="GET">
-                            <input class="myform__input" type="text" name="name" placeholder="Auskteez Tran" autofocus required>
-                            <input class="myform__input" type="email" name="email" placeholder="Your email..." required>
-                            <input class="myform__input" data-mask="(999) 999 99 99" type="tel" name="phone" id="phone" placeholder="Your phone number..." required>
+                         <form class="myform" action="" method="POST">
+                            <input class="myform__input" type="text" name="name" minlength="2" maxlength="30" placeholder="Auskteez Tran" autofocus required>
+                            <input class="myform__input" type="mail" name="mail" id="mail" placeholder="Your email..." required>
+                            <input class="myform__input" mask="+0 (000) 000-00-00" type="tel" name="phone" id="phone" placeholder="Your phone number..." required>
                             <textarea name="comments" rows="8" cols="10" placeholder="Your message..."></textarea>
                             <button type="submit" value="Submit" class="myform__btn">Submit</button>
                          </form>
@@ -469,14 +469,34 @@
        <div class="container">
             <span class="text text--smoll">© 2015 Company. All right reserved.</span>
             <span class="text text--pacifico">Cahee</span>
-            <span class="text text--light">Made with<a class="text--red">love</a>by Auskteez</span>
+            <span class="text text--light">Made with<a href="#" class="text--red">love</a>by Auskteez</span>
        </div>
     </footer>
 
     
     
-        <script src="jquery.mask.min.js"></script>
-        <script src="jquery.custom.js"></script>
+        <script src="jquery.js"></script>
+        <script src="jquery.maskedinput.min.js"></script>
+
+         <script>
+            //Код jQuery, установливающий маску для ввода телефона элементу input
+            //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+            $(function(){
+              //2. Получить элемент, к которому необходимо добавить маску
+              $("#phone").mask("8(999) 999-9999");
+            });
+        </script>
+  
+         <script>
+            $(function(){
+            //Использование параметра completed
+            $("#phone").mask("8(999) 999-9999", {
+            completed: function(){ alert("Вы ввели номер: " + this.val()); }
+            });
+         });
+        </script>
+
+    
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         <script src="https://kit.fontawesome.com/d357e3b57e.js" crossorigin="anonymous"></script>
    
