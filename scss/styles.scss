@@ -698,17 +698,10 @@ header {
     }
     &--red {
         @include font(1.5rem, $red-color, 700, $text-ff, 1.5);
+        margin: 0 5px;
     }
 
 }
-
-.ok{
-    border: 1px solid green;
-    }
-.error{
-    border: 1px solid red;
-}
-
 
 
     

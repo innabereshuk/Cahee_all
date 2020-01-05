@@ -1217,10 +1217,5 @@ textarea {
     line-height: 1.5;
     font-style: inherit;
     font-size: 1.5rem;
-    color: #ff2b58; }
-
-.ok {
-  border: 1px solid green; }
-
-.error {
-  border: 1px solid red; }
+    color: #ff2b58;
+    margin: 0 5px; }
